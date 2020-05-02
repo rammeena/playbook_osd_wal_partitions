@@ -1,0 +1,7 @@
+all:
+  children:
+    nvmssd:
+      hosts:
+        ceph-osdnvm1-c7-33-fl:
+      vars:
+        ansible_user: centos
