@@ -332,3 +332,13 @@
     - name: Print Device info of /dev/info_nvme0n1p16
       debug:
         msg: "{{ info_nvme0n1p16 }}"
+        
+    - name: Read device information of /dev/nvme0n1
+      parted:
+        device: /dev/nvme0n1
+        unit: GB
+      register: info_nvme0n1
+
+    - name: Print Device info of /dev/nvme0n1
+      debug:
+        msg: "{{ info_nvme0n1 }}"
