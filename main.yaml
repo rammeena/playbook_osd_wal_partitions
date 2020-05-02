@@ -1,2 +1,3 @@
 ---
-- import_playbook: parted_osdnvm1.yaml
+- import_playbook: osdnvm1-wal-parttions.yaml
+- import_playbook: osdnvm1-db-parttions.yaml
