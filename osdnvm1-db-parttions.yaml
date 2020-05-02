@@ -1,5 +1,5 @@
 ---
-- name: nvme partitions using parted module
+- name: wal partitions using parted module on nvme disk /dev/nvme1n1
   hosts: all
   become: true
   tasks:
