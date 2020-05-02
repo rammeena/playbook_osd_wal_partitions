@@ -1,0 +1,4 @@
+---
+name: nvme partitions on {{ ansible_hostname }}
+debug:
+  msg: "Running parted on ansible_hostname"

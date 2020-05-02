@@ -1,0 +1,2 @@
+---
+- import_playbook: parted_osdnvm1.yaml
