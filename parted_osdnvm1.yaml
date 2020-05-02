@@ -9,9 +9,14 @@
 
     - name: Read device information
       parted:
-        device: /dev/sdb
+        device: /dev/nvme0n1
         unit: MiB
-        
+      register: info_nvme0n1
+
+    - name: Print Device info {{ ansible_hostname }}
+      debug:
+        var: "{{ info_nvme0n1 }}"
+
     # - name: Create a new primary partition
     #   parted:
     #     device: /dev/nvme0n1
