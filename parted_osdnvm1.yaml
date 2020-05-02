@@ -5,4 +5,4 @@
   tasks:
     - name: Running debug to check ansible run on {{ ansible_hostname }}
       debug:
-        msg: "Running parted on ansible_hostname"
+        msg: "Running parted on {{ ansible_hostname }}"
