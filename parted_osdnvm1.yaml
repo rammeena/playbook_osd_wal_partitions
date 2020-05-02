@@ -7,11 +7,11 @@
       parted:
         device: /dev/nvme0n1
         unit: GB
-      register: info_nvme0n1
+      register: before_part
 
     - name: Print Device info of /dev/nvme0n1
       debug:
-        msg: "{{ info_nvme0n1 }}"
+        msg: "{{ before_part }}"
 
     - name: Create a 1st partition on /dev/nvme0n1
       parted:
@@ -23,16 +23,6 @@
         part_start: "0%"
         part_end: "5%"
 
-    - name: Read device information of /dev/nvme0n1p1
-      parted:
-        device: /dev/nvme0n1p1
-        unit: GB
-      register: info_nvme0n1p1
-
-    - name: Print Device info of /dev/nvme0n1p1
-      debug:
-        msg: "{{ info_nvme0n1p1 }}"
-
     - name: Create a 2nd partition on /dev/nvme0n1
       parted:
         device: /dev/nvme0n1
@@ -42,16 +32,6 @@
         state: present
         part_start: "5%"
         part_end: "10%"
-
-    - name: Read device information of /dev/nvme0n1p2
-      parted:
-        device: /dev/nvme0n1p2
-        unit: GB
-      register: info_nvme0n1p2
-
-    - name: Print Device info of /dev/nvme0n1p2
-      debug:
-        msg: "{{ info_nvme0n1p2 }}"
 
     - name: Create a 3rd partition on /dev/nvme0n1
       parted:
@@ -63,16 +43,6 @@
         part_start: "10%"
         part_end: "15%"
 
-    - name: Read device information of /dev/nvme0n1p3
-      parted:
-        device: /dev/nvme0n1p3
-        unit: GB
-      register: info_nvme0n1p3
-
-    - name: Print Device info of /dev/nvme0n1p3
-      debug:
-        msg: "{{ info_nvme0n1p3 }}"
-
     - name: Create a 4th partition on /dev/nvme0n1
       parted:
         device: /dev/nvme0n1
@@ -82,16 +52,6 @@
         state: present
         part_start: "15%"
         part_end: "20%"
-
-    - name: Read device information of /dev/nvme0n1p4
-      parted:
-        device: /dev/nvme0n1p4
-        unit: GB
-      register: info_nvme0n1p4
-
-    - name: Print Device info of /dev/nvme0n1p4
-      debug:
-        msg: "{{ info_nvme0n1p4 }}"
 
     - name: Create a 5th partition on /dev/nvme0n1
       parted:
@@ -103,16 +63,6 @@
         part_start: "20%"
         part_end: "25%"
 
-    - name: Read device information of /dev/nvme0n1p5
-      parted:
-        device: /dev/nvme0n1p5
-        unit: GB
-      register: info_nvme0n1p5
-
-    - name: Print Device info of /dev/nvme0n1p5
-      debug:
-        msg: "{{ info_nvme0n1p5 }}"
-
     - name: Create a 6th partition on /dev/nvme0n1
       parted:
         device: /dev/nvme0n1
@@ -122,16 +72,6 @@
         state: present
         part_start: "25%"
         part_end: "30%"
-
-    - name: Read device information of /dev/nvme0n1p6
-      parted:
-        device: /dev/nvme0n1p6
-        unit: GB
-      register: info_nvme0n1p6
-
-    - name: Print Device info of /dev/nvme0n1p6
-      debug:
-        msg: "{{ info_nvme0n1p6 }}"
 
     - name: Create a 7th partition on /dev/nvme0n1
       parted:
@@ -143,16 +83,6 @@
         part_start: "30%"
         part_end: "35%"
 
-    - name: Read device information of /dev/nvme0n1p7
-      parted:
-        device: /dev/nvme0n1p7
-        unit: GB
-      register: info_nvme0n1p7
-
-    - name: Print Device info of /dev/nvme0n1p7
-      debug:
-        msg: "{{ info_nvme0n1p7 }}"
-
     - name: Create a 8th partition on /dev/nvme0n1
       parted:
         device: /dev/nvme0n1
@@ -162,16 +92,6 @@
         state: present
         part_start: "35%"
         part_end: "40%"
-
-    - name: Read device information of /dev/nvme0n1p8
-      parted:
-        device: /dev/nvme0n1p8
-        unit: GB
-      register: info_nvme0n1p8
-
-    - name: Print Device info of /dev/info_nvme0n1p8
-      debug:
-        msg: "{{ info_nvme0n1p8 }}"
 
     - name: Create a 9th partition on /dev/nvme0n1
       parted:
@@ -183,16 +103,6 @@
         part_start: "40%"
         part_end: "45%"
 
-    - name: Read device information of /dev/nvme0n1p9
-      parted:
-        device: /dev/nvme0n1p9
-        unit: GB
-      register: info_nvme0n1p9
-
-    - name: Print Device info of /dev/info_nvme0n1p9
-      debug:
-        msg: "{{ info_nvme0n1p9 }}"
-
     - name: Create a 10th partition on /dev/nvme0n1
       parted:
         device: /dev/nvme0n1
@@ -202,16 +112,6 @@
         state: present
         part_start: "45%"
         part_end: "50%"
-
-    - name: Read device information of /dev/nvme0n1p10
-      parted:
-        device: /dev/nvme0n1p10
-        unit: GB
-      register: info_nvme0n1p10
-
-    - name: Print Device info of /dev/info_nvme0n1p10
-      debug:
-        msg: "{{ info_nvme0n1p10 }}"
 
     - name: Create a 11th partition on /dev/nvme0n1
       parted:
@@ -223,16 +123,6 @@
         part_start: "50%"
         part_end: "55%"
 
-    - name: Read device information of /dev/nvme0n1p11
-      parted:
-        device: /dev/nvme0n1p11
-        unit: GB
-      register: info_nvme0n1p11
-
-    - name: Print Device info of /dev/info_nvme0n1p11
-      debug:
-        msg: "{{ info_nvme0n1p11 }}"
-
     - name: Create a 12th partition on /dev/nvme0n1
       parted:
         device: /dev/nvme0n1
@@ -242,16 +132,6 @@
         state: present
         part_start: "55%"
         part_end: "60%"
-
-    - name: Read device information of /dev/nvme0n1p12
-      parted:
-        device: /dev/nvme0n1p12
-        unit: GB
-      register: info_nvme0n1p12
-
-    - name: Print Device info of /dev/info_nvme0n1p12
-      debug:
-        msg: "{{ info_nvme0n1p12 }}"
 
     - name: Create a 13th partition on /dev/nvme0n1
       parted:
@@ -263,16 +143,6 @@
         part_start: "60%"
         part_end: "65%"
 
-    - name: Read device information of /dev/nvme0n1p13
-      parted:
-        device: /dev/nvme0n1p13
-        unit: GB
-      register: info_nvme0n1p13
-
-    - name: Print Device info of /dev/info_nvme0n1p13
-      debug:
-        msg: "{{ info_nvme0n1p13 }}"
-
     - name: Create a 14th partition on /dev/nvme0n1
       parted:
         device: /dev/nvme0n1
@@ -282,16 +152,6 @@
         state: present
         part_start: "65%"
         part_end: "70%"
-
-    - name: Read device information of /dev/nvme0n1p14
-      parted:
-        device: /dev/nvme0n1p14
-        unit: GB
-      register: info_nvme0n1p14
-
-    - name: Print Device info of /dev/info_nvme0n1p14
-      debug:
-        msg: "{{ info_nvme0n1p14 }}"
 
     - name: Create a 15th partition on /dev/nvme0n1
       parted:
@@ -303,16 +163,6 @@
         part_start: "70%"
         part_end: "75%"
 
-    - name: Read device information of /dev/nvme0n1p15
-      parted:
-        device: /dev/nvme0n1p15
-        unit: GB
-      register: info_nvme0n1p15
-
-    - name: Print Device info of /dev/info_nvme0n1p15
-      debug:
-        msg: "{{ info_nvme0n1p15 }}"
-
     - name: Create a 16th partition on /dev/nvme0n1
       parted:
         device: /dev/nvme0n1
@@ -323,22 +173,12 @@
         part_start: "75%"
         part_end: "80%"
 
-    - name: Read device information of /dev/nvme0n1p16
-      parted:
-        device: /dev/nvme0n1p16
-        unit: GB
-      register: info_nvme0n1p16
-
-    - name: Print Device info of /dev/info_nvme0n1p16
-      debug:
-        msg: "{{ info_nvme0n1p16 }}"
-        
     - name: Read device information of /dev/nvme0n1
       parted:
         device: /dev/nvme0n1
         unit: GB
-      register: info_nvme0n1
+      register: after_part
 
     - name: Print Device info of /dev/nvme0n1
       debug:
-        msg: "{{ info_nvme0n1 }}"
+        msg: "{{ after_part }}"
