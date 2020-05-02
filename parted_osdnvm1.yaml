@@ -15,10 +15,20 @@
 
     - name: Print Device info {{ ansible_hostname }}
       debug:
-        var: "{{ info_nvme0n1 }}"
+        var: {{ info_nvme0n1 }}
 
-    # - name: Create a new primary partition
-    #   parted:
-    #     device: /dev/nvme0n1
-    #     number: 16
-    #     state: present
+    - name: Create a new primary partition
+      parted:
+        device: /dev/nvme0n1
+        number: 16
+        state: present
+
+    - name: Read device information
+      parted:
+        device: /dev/nvme0n1
+        unit: MiB
+      register: info_nvme0n1
+      
+    - name: Print Device info {{ ansible_hostname }}
+      debug:
+        var: {{ info_nvme0n1 }}
