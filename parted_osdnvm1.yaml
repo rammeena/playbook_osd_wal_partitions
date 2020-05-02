@@ -11,7 +11,7 @@
 
     - name: Print Device info {{ ansible_hostname }}
       debug:
-        var: "{{ info_nvme0n1 }}"
+        msg: "{{ info_nvme0n1 }}"
 
     - name: Create a new primary partition
       parted:
@@ -20,9 +20,8 @@
         label: gpt
         name: "Journal for /dev/sdb"
         state: present
-        part_start: "0"
-        part_end: "5"
-        unit: %
+        part_start: "0%"
+        part_end: "5%"
 
     - name: Read device information
       parted:
@@ -32,4 +31,4 @@
 
     - name: Print Device info {{ ansible_hostname }}
       debug:
-        var: "{{ info_nvme0n1 }}"
+        msg: "{{ info_nvme0n1 }}"
