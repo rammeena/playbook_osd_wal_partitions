@@ -1,5 +1,6 @@
 ---
 - import_playbook: ceph-osdnvm1-wal-partition.yaml
   when: ansible_hostname == ceph-osdnvm1-c7-33-fl
+  
 - import_playbook: ceph-osdnvm1-db-partition.yaml
   when: ansible_hostname == ceph-osdnvm1-c7-33-fl
