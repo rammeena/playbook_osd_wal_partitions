@@ -3,10 +3,6 @@
   hosts: all
   become: true
   tasks:
-    # - name: Running debug to check ansible run on {{ ansible_hostname }}
-    #   debug:
-    #     msg: "Running parted on {{ ansible_hostname }}"
-
     - name: Read device information
       parted:
         device: /dev/nvme0n1
@@ -20,8 +16,13 @@
     - name: Create a new primary partition
       parted:
         device: /dev/nvme0n1
-        number: 16
+        number: 1
+        label: gpt
+        name: "Journal for /dev/sdb"
         state: present
+        part_start: "0"
+        part_end: "5"
+        unit: %
 
     - name: Read device information
       parted:
