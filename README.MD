@@ -4,9 +4,11 @@ This playbook allows configuring block device partition using the `parted` comma
 
 # Requirements
 ```This module requires parted version 1.8.3 and above.```
+
 ```If the version of parted is below 3.1, it requires a Linux version running the sysfs file system /sys/```
 
-#Examples:
+# Examples
+```
 parted:
   device: /dev/sdb
   number: 1
@@ -44,3 +46,4 @@ parted:
   number: '{{ item.num }}'
   state: absent
 loop: '{{ sdb_info.partitions }}'
+```
