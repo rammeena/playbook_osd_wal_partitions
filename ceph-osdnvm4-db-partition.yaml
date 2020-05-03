@@ -1,0 +1,174 @@
+---
+- name: create rocks db partitions using parted module on nvme disk /dev/nvme1n1
+  hosts: all
+  become: true
+  tasks:
+    - name: Read device info of /dev/nvme1n1
+      parted:
+        device: /dev/nvme1n1
+        unit: GB
+      register: before_part
+
+    - name: Print Device info of /dev/nvme1n1
+      debug:
+        msg: "{{ before_part }}"
+
+    - name: 1st rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 1
+        label: gpt
+        name: "db for /dev/sdb"
+        state: present
+        part_start: "0%"
+        part_end: "5%"
+
+    - name: 2nd rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 2
+        label: gpt
+        name: "db for /dev/sdc"
+        state: present
+        part_start: "5%"
+        part_end: "10%"
+
+    - name: 3rd rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 3
+        label: gpt
+        name: "db for /dev/sdd"
+        state: present
+        part_start: "10%"
+        part_end: "15%"
+
+    - name: 4th rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 4
+        label: gpt
+        name: "db for /dev/sde"
+        state: present
+        part_start: "15%"
+        part_end: "20%"
+
+    - name: 5th rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 5
+        label: gpt
+        name: "db for /dev/sdf"
+        state: present
+        part_start: "20%"
+        part_end: "25%"
+
+    - name: 6th rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 6
+        label: gpt
+        name: "db for /dev/sdg"
+        state: present
+        part_start: "25%"
+        part_end: "30%"
+
+    - name: 7th rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 7
+        label: gpt
+        name: "db for /dev/sdh"
+        state: present
+        part_start: "30%"
+        part_end: "35%"
+
+    - name: 8th rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 8
+        label: gpt
+        name: "db for /dev/sdi"
+        state: present
+        part_start: "35%"
+        part_end: "40%"
+
+    - name: 9th rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 9
+        label: gpt
+        name: "db for /dev/sdj"
+        state: present
+        part_start: "40%"
+        part_end: "45%"
+
+    - name: 10th rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 10
+        label: gpt
+        name: "db for /dev/sdk"
+        state: present
+        part_start: "45%"
+        part_end: "50%"
+
+    - name: 11th rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 11
+        label: gpt
+        name: "db for /dev/sdl"
+        state: present
+        part_start: "50%"
+        part_end: "55%"
+
+    - name: 12th rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 12
+        label: gpt
+        name: "db for /dev/sdm"
+        state: present
+        part_start: "55%"
+        part_end: "60%"
+
+    - name: 13th rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 13
+        label: gpt
+        name: "db for /dev/sdn"
+        state: present
+        part_start: "60%"
+        part_end: "65%"
+
+    - name: 14th rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 14
+        label: gpt
+        name: "db for /dev/sdo"
+        state: present
+        part_start: "65%"
+        part_end: "70%"
+
+    - name: 15th rocks db partition
+      parted:
+        device: /dev/nvme1n1
+        number: 15
+        label: gpt
+        name: "db for /dev/sdq"
+        state: present
+        part_start: "70%"
+        part_end: "75%"
+
+    - name: Read device info of /dev/nvme1n1
+      parted:
+        device: /dev/nvme1n1
+        unit: GB
+      register: after_part
+
+    - name: Print Device info of /dev/nvme1n1
+      debug:
+        msg: "{{ after_part }}"
