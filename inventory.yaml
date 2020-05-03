@@ -3,5 +3,6 @@ all:
     nvmssd:
       hosts:
         ceph-osdnvm1-c7-33-fl:
-      vars:
-        ansible_user: centos
+        ceph-osdnvm2-c7-35-fl:
+    vars:
+      ansible_user: centos
