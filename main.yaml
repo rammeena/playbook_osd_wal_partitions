@@ -10,6 +10,12 @@
 - import_playbook: ceph-osdnvm1-db-partition.yaml
   when: ansible_hostname == "ceph-osdnvm1-c7-33-fl"
 
+- import_playbook: ceph-osdnvm2-wal-partition.yaml
+  when: ansible_hostname == "ceph-osdnvm2-c7-35-fl"
+
+- import_playbook: ceph-osdnvm2-db-partition.yaml
+  when: ansible_hostname == "ceph-osdnvm2-c7-35-fl"
+
 - import_playbook: ceph-osdnvm4-wal-partition.yaml
   when: ansible_hostname == "ceph-osdnvm4-d16-33-fl"
 
