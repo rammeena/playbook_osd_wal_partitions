@@ -166,7 +166,7 @@
     - name: 16th rocks db partition
       parted:
         device: /dev/nvme1n1
-        number: 15
+        number: 16
         label: gpt
         name: "osd rocks db partition"
         state: present
