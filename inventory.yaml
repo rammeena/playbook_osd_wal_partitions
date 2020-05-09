@@ -1,6 +1,6 @@
 all:
   children:
-    nvmeosd:
+    ceph_nvme_osds:
       hosts:
         ceph-osdnvm1-c7-33-fl:
           host_osd_count: 16
