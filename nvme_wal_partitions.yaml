@@ -1,0 +1,6 @@
+---
+- name: create wal journal and rocks db partitions
+  hosts: ceph_nvme_osds
+  become: true
+  roles:
+    - nvme_partitions

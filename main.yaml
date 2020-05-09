@@ -1,0 +1,7 @@
+---
+- name: Gather facts for conditional playbook imports
+  hosts: all
+  become: true
+  gather_facts: true
+
+- import_playbook: nvme_wal_partitions.yaml
