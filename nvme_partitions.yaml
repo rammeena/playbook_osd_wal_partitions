@@ -1,6 +1,6 @@
 ---
 - name: create wal journal and rocks db partitions
-  hosts: all
+  hosts: nvmeosd
   become: true
   roles:
     - nvme_partitions
