@@ -1,5 +1,5 @@
 ---
-- name: create wal journal  using parted module on nvme disk /dev/nvme0n1
+- name: create wal journal partitions
   hosts: all
   become: true
   tasks:

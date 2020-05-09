@@ -1,5 +1,5 @@
 ---
-- name: create rocks db partitions using parted module on nvme disk /dev/nvme1n1
+- name: create rocks db partitions
   hosts: all
   become: true
   tasks:

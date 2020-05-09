@@ -1,15 +1,15 @@
 ---
-- name: create wal journal  using parted module on nvme disk /dev/nvme0n1
+- name: create wal journal using partitions
   hosts: all
   become: true
   tasks:
-    - name: Read device info of /dev/nvme0n1
+    - name: Read Disk info of /dev/nvme0n1
       parted:
         device: /dev/nvme0n1
         unit: GB
       register: before_part
 
-    - name: Print Device info of /dev/nvme0n1
+    - name: Print Disk info of /dev/nvme0n1
       debug:
         msg: "{{ before_part }}"
 
@@ -18,7 +18,7 @@
         device: /dev/nvme0n1
         number: 1
         label: gpt
-        name: "wal for /dev/sdb"
+        name: "osd wal journal partition"
         state: present
         part_start: "0%"
         part_end: "5%"
@@ -28,7 +28,7 @@
         device: /dev/nvme0n1
         number: 2
         label: gpt
-        name: "wal for /dev/sdc"
+        name: "osd wal journal partition"
         state: present
         part_start: "5%"
         part_end: "10%"
@@ -38,7 +38,7 @@
         device: /dev/nvme0n1
         number: 3
         label: gpt
-        name: "wal for /dev/sdd"
+        name: "osd wal journal partition"
         state: present
         part_start: "10%"
         part_end: "15%"
@@ -48,7 +48,7 @@
         device: /dev/nvme0n1
         number: 4
         label: gpt
-        name: "wal for /dev/sde"
+        name: "osd wal journal partition"
         state: present
         part_start: "15%"
         part_end: "20%"
@@ -58,7 +58,7 @@
         device: /dev/nvme0n1
         number: 5
         label: gpt
-        name: "wal for /dev/sdf"
+        name: "osd wal journal partition"
         state: present
         part_start: "20%"
         part_end: "25%"
@@ -68,7 +68,7 @@
         device: /dev/nvme0n1
         number: 6
         label: gpt
-        name: "wal for /dev/sdg"
+        name: "osd wal journal partition"
         state: present
         part_start: "25%"
         part_end: "30%"
@@ -78,7 +78,7 @@
         device: /dev/nvme0n1
         number: 7
         label: gpt
-        name: "wal for /dev/sdh"
+        name: "osd wal journal partition"
         state: present
         part_start: "30%"
         part_end: "35%"
@@ -88,7 +88,7 @@
         device: /dev/nvme0n1
         number: 8
         label: gpt
-        name: "wal for /dev/sdi"
+        name: "osd wal journal partition"
         state: present
         part_start: "35%"
         part_end: "40%"
@@ -98,7 +98,7 @@
         device: /dev/nvme0n1
         number: 9
         label: gpt
-        name: "wal for /dev/sdj"
+        name: "osd wal journal partition"
         state: present
         part_start: "40%"
         part_end: "45%"
@@ -108,7 +108,7 @@
         device: /dev/nvme0n1
         number: 10
         label: gpt
-        name: "wal for /dev/sdk"
+        name: "osd wal journal partition"
         state: present
         part_start: "45%"
         part_end: "50%"
@@ -118,7 +118,7 @@
         device: /dev/nvme0n1
         number: 11
         label: gpt
-        name: "wal for /dev/sdl"
+        name: "osd wal journal partition"
         state: present
         part_start: "50%"
         part_end: "55%"
@@ -128,7 +128,7 @@
         device: /dev/nvme0n1
         number: 12
         label: gpt
-        name: "wal for /dev/sdm"
+        name: "osd wal journal partition"
         state: present
         part_start: "55%"
         part_end: "60%"
@@ -138,7 +138,7 @@
         device: /dev/nvme0n1
         number: 13
         label: gpt
-        name: "wal for /dev/sdn"
+        name: "osd wal journal partition"
         state: present
         part_start: "60%"
         part_end: "65%"
@@ -148,7 +148,7 @@
         device: /dev/nvme0n1
         number: 14
         label: gpt
-        name: "wal for /dev/sdo"
+        name: "osd wal journal partition"
         state: present
         part_start: "65%"
         part_end: "70%"
@@ -158,17 +158,17 @@
         device: /dev/nvme0n1
         number: 15
         label: gpt
-        name: "wal for /dev/sdq"
+        name: "osd wal journal partition"
         state: present
         part_start: "70%"
         part_end: "75%"
 
-    - name: Read device info of /dev/nvme0n1
+    - name: Read Disk info of /dev/nvme0n1
       parted:
         device: /dev/nvme0n1
         unit: GB
       register: after_part
 
-    - name: Print Device info of /dev/nvme0n1
+    - name: Print Disk info of /dev/nvme0n1
       debug:
         msg: "{{ after_part }}"
