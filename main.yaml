@@ -4,4 +4,4 @@
   become: true
   gather_facts: true
 
-- import_playbook: nvme_partitions.yaml
+- import_playbook: nvme_wal_partitions.yaml
