@@ -4,26 +4,4 @@
   become: true
   gather_facts: true
 
-- import_playbook: ceph-osdnvm1-wal-partition.yaml
-  when: ansible_hostname == "ceph-osdnvm1-c7-33-fl"
-
-- import_playbook: ceph-osdnvm1-db-partition.yaml
-  when: ansible_hostname == "ceph-osdnvm1-c7-33-fl"
-
-- import_playbook: ceph-osdnvm2-wal-partition.yaml
-  when: ansible_hostname == "ceph-osdnvm2-c7-35-fl"
-
-- import_playbook: ceph-osdnvm2-db-partition.yaml
-  when: ansible_hostname == "ceph-osdnvm2-c7-35-fl"
-
-- import_playbook: ceph-osdnvm3-wal-partition.yaml
-  when: ansible_hostname == "ceph-osdnvm3-d9-35-fl"
-
-- import_playbook: ceph-osdnvm3-db-partition.yaml
-  when: ansible_hostname == "ceph-osdnvm3-d9-35-fl"
-
-- import_playbook: ceph-osdnvm4-wal-partition.yaml
-  when: ansible_hostname == "ceph-osdnvm4-d16-33-fl"
-
-- import_playbook: ceph-osdnvm4-db-partition.yaml
-  when: ansible_hostname == "ceph-osdnvm4-d16-33-fl"
+- import_playbook: nvme_partitions.yaml
