@@ -168,7 +168,7 @@
     state: present
     part_start: "75%"
     part_end: "80%"
-  when: host_osd_count >= 16
+  when: host_osd_count is defined and host_osd_count >= 16
 
 - name: 17th wal partition
   parted:
@@ -179,7 +179,7 @@
     state: present
     part_start: "80%"
     part_end: "85%"
-  when: host_osd_count >= 17
+  when: host_osd_count is defined and host_osd_count >= 17
 
 - name: 18th wal partition
   parted:
@@ -190,7 +190,7 @@
     state: present
     part_start: "85%"
     part_end: "90%"
-  when: host_osd_count >= 18
+  when: host_osd_count is defined and host_osd_count >= 18
 
 - name: 19th wal partition
   parted:
@@ -201,7 +201,7 @@
     state: present
     part_start: "90%"
     part_end: "95%"
-  when: host_osd_count >= 19
+  when: host_osd_count is defined and host_osd_count >= 19
 
 - name: 20th wal partition
   parted:
@@ -212,7 +212,7 @@
     state: present
     part_start: "95%"
     part_end: "100%"
-  when: host_osd_count >= 20
+  when: host_osd_count is defined and host_osd_count >= 20
 
 - name: Read Disk info of /dev/nvme0n1
   parted:
