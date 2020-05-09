@@ -3,8 +3,10 @@ all:
     nvmessd:
       hosts:
         ceph-osdnvm1-c7-33-fl:
+          host_osd_count: 16
         ceph-osdnvm2-c7-35-fl:
         ceph-osdnvm3-d9-35-fl:
+          host_osd_count: 16
         ceph-osdnvm4-d16-33-fl:
       vars:
         ansible_user: centos

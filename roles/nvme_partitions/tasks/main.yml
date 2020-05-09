@@ -1,2 +1,4 @@
 ---
 # tasks file for nvme_partitions
+- include_task: nvme-db-partition.yaml
+- include_task: nvme-wal-partition.yaml
